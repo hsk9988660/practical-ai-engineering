@@ -1,0 +1,33 @@
+{
+  "id": "complex-polar-roots",
+  "title": "Polar form, powers and roots of complex numbers",
+  "kind": "implement",
+  "summary": "Convert complex numbers to polar form with atan2, raise them to powers with de Moivre's formula, and find all n-th roots and the roots of unity.",
+  "difficulty": "easy",
+  "tags": [
+    "complex-numbers",
+    "polar-form",
+    "roots-of-unity"
+  ],
+  "lesson": "phases/01-math-foundations/19-complex-numbers",
+  "cheatsheet": null,
+  "minutes": 25,
+  "entry": [
+    "to_polar",
+    "from_polar",
+    "complex_power",
+    "roots_of_unity",
+    "nth_roots"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "arctan_ratio": "Uses arctan of the ratio y / x, which loses the quadrant and divides by zero for x = 0.",
+    "manhattan_radius": "Uses |x| + |y| and not the Euclidean length for the radius.",
+    "power_adds_exponent": "Adds n to the angle and does not multiply the angle by n.",
+    "one_root_missing": "Returns n - 1 roots of unity.",
+    "root_angle_not_divided": "Divides only theta by n and not the added turns 2 pi k."
+  }
+}

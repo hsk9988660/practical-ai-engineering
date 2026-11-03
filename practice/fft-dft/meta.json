@@ -1,0 +1,31 @@
+{
+  "id": "fft-dft",
+  "title": "The DFT and the radix-2 FFT",
+  "kind": "implement",
+  "summary": "Write the discrete Fourier transform as a direct sum, the recursive radix-2 fast Fourier transform, and the inverse transform.",
+  "difficulty": "hard",
+  "tags": [
+    "fourier-transform",
+    "fft",
+    "signal-processing"
+  ],
+  "lesson": "phases/01-math-foundations/20-fourier-transform",
+  "cheatsheet": null,
+  "minutes": 40,
+  "entry": [
+    "dft",
+    "fft",
+    "ifft"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "dft_positive_exponent": "Uses +i in the exponent, which gives the spectrum of the reversed signal.",
+    "fft_no_twiddle": "Leaves out the twiddle factors in the combination step.",
+    "ifft_no_scale": "Does not divide by n in the inverse transform.",
+    "fft_halves_swapped": "Puts even minus twiddle in the first half and even plus twiddle in the second half.",
+    "fft_no_length_check": "Does not check the length, so a length that is not a power of 2 gives a wrong result."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "simplex-projection",
+  "title": "Projection onto the simplex and projected gradient descent",
+  "kind": "implement",
+  "summary": "Find the nearest probability vector with a sort-based projection, and use it in projected gradient descent for a constrained problem.",
+  "difficulty": "hard",
+  "tags": [
+    "convex-optimization",
+    "projection",
+    "constrained-optimization"
+  ],
+  "lesson": "phases/01-math-foundations/18-convex-optimization",
+  "cheatsheet": null,
+  "minutes": 40,
+  "entry": [
+    "project_simplex",
+    "projected_gradient"
+  ],
+  "collections": [
+    "math-foundations",
+    "optimizers"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "no_clip": "Subtracts theta but does not clip at 0, so entries can stay negative.",
+    "theta_from_all_entries": "Uses all n entries to compute theta, and not only the ones that stay positive.",
+    "unsorted": "Does not sort the vector before the cumulative sums.",
+    "ignores_z": "Uses a sum of 1 and ignores the argument z.",
+    "rho_first": "Takes the first index where the condition holds and not the last.",
+    "no_projection_in_loop": "Takes gradient steps without projecting them."
+  }
+}

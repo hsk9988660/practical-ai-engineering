@@ -1,0 +1,31 @@
+{
+  "id": "graph-algorithms",
+  "title": "BFS distances, connected components and the graph Laplacian",
+  "kind": "implement",
+  "summary": "Find shortest path lengths with a breadth-first search, label connected components, and build the graph Laplacian whose zero eigenvalues count the components.",
+  "difficulty": "medium",
+  "tags": [
+    "graph-theory",
+    "bfs",
+    "laplacian"
+  ],
+  "lesson": "phases/01-math-foundations/21-graph-theory",
+  "cheatsheet": null,
+  "minutes": 30,
+  "entry": [
+    "bfs_distances",
+    "connected_components",
+    "laplacian"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "stack_instead_of_queue": "Takes nodes from the end of the queue, which is a depth-first order, and so can find paths that are too long.",
+    "source_distance_one": "Gives the source a distance of 1 and not 0.",
+    "labels_never_increase": "Does not move to the next label, so every component gets label 0.",
+    "labels_are_start_nodes": "Labels each component with its first node and not with the next label in 0, 1, 2, ...",
+    "laplacian_negated": "Computes A - D and not D - A."
+  }
+}

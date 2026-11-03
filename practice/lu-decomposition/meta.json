@@ -1,0 +1,32 @@
+{
+  "id": "lu-decomposition",
+  "title": "LU decomposition and linear system solve",
+  "kind": "implement",
+  "summary": "Factor a square matrix as P A = L U with partial pivoting, solve triangular systems by substitution, and use them to solve A x = b.",
+  "difficulty": "hard",
+  "tags": [
+    "linear-algebra",
+    "lu-decomposition",
+    "linear-systems"
+  ],
+  "lesson": "phases/01-math-foundations/17-linear-systems",
+  "cheatsheet": null,
+  "minutes": 45,
+  "entry": [
+    "lu_decompose",
+    "forward_substitution",
+    "back_substitution",
+    "lu_solve"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "no_pivoting": "Always uses the diagonal entry as the pivot.",
+    "l_swap_missing": "Does not swap the stored multipliers when it swaps two rows.",
+    "perm_not_applied": "Solves with b and not with b reordered by the permutation.",
+    "back_substitution_wrong_order": "Runs back substitution from the first row down.",
+    "no_singular_check": "Does not check the pivot, so a singular matrix gives infinity or NaN."
+  }
+}

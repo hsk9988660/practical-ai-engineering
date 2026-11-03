@@ -1,0 +1,32 @@
+{
+  "id": "markov-chain",
+  "title": "Markov chains: n steps, stationary distribution and simulation",
+  "kind": "implement",
+  "summary": "Propagate a state distribution through a transition matrix, solve for the stationary distribution, and simulate a path from given uniform numbers.",
+  "difficulty": "medium",
+  "tags": [
+    "markov-chain",
+    "stochastic-processes",
+    "stationary-distribution"
+  ],
+  "lesson": "phases/01-math-foundations/22-stochastic-processes",
+  "cheatsheet": null,
+  "minutes": 30,
+  "entry": [
+    "n_step",
+    "stationary_distribution",
+    "simulate"
+  ],
+  "collections": [
+    "math-foundations",
+    "rl-basics"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "column_vector_step": "Multiplies the matrix by the vector from the left, which uses the transposed convention.",
+    "no_normalization_row": "Does not replace a row of the system by the sum constraint, so the system is singular.",
+    "wrong_normalization": "Normalizes the stationary distribution to a sum of 2.",
+    "simulate_left_boundary": "Puts a u that equals a cumulative value into the earlier state.",
+    "n_step_off_by_one": "Takes n + 1 steps."
+  }
+}
