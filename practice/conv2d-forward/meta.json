@@ -1,0 +1,21 @@
+{
+  "id": "conv2d-forward",
+  "title": "2D convolution forward pass",
+  "kind": "implement",
+  "summary": "A multi-channel conv2d with stride, zero padding and bias, plus the output size formula, written with loops and numpy.",
+  "difficulty": "medium",
+  "tags": ["convolution", "cnn", "computer-vision"],
+  "lesson": "phases/04-computer-vision/02-convolutions-from-scratch",
+  "cheatsheet": "cnn-architectures",
+  "minutes": 30,
+  "entry": ["output_size", "conv2d"],
+  "collections": ["computer-vision"],
+  "time_limit_s": 10,
+  "mutants": {
+    "flip_kernel": "Flips the kernel in both spatial axes, which is true convolution. Deep learning layers use cross-correlation.",
+    "no_bias": "Ignores the bias vector b.",
+    "stride_ignored": "Slides the window one pixel at a time, so stride has no effect on which positions are read.",
+    "pad_one_side": "Pads only the top and left of the image, so the output is shifted.",
+    "first_channel_only": "Uses only the first input channel and does not sum over the input channels."
+  }
+}
