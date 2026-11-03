@@ -1,0 +1,20 @@
+{
+  "id": "batch-iterator",
+  "title": "A lazy batch iterator",
+  "kind": "implement",
+  "summary": "Group any iterable into lists of a fixed size, with an optional drop_last, without loading the whole input into memory.",
+  "difficulty": "easy",
+  "tags": ["python", "generators", "data-loading"],
+  "lesson": "phases/00-setup-and-tooling/13-python-for-ai-engineering",
+  "cheatsheet": null,
+  "minutes": 15,
+  "entry": ["batches"],
+  "collections": ["python-for-ai"],
+  "time_limit_s": 10,
+  "mutants": {
+    "eager_copy": "Copies the whole input into a list first, so it reads every item before the first batch.",
+    "ignores_drop_last": "Always yields the short last batch, even when drop_last is True.",
+    "reuses_buffer": "Yields one list object again and again and clears it, so earlier batches change.",
+    "no_validation": "Accepts a batch size below 1 and returns no batches."
+  }
+}

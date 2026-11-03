@@ -1,4 +1,5 @@
 [
+  {"id": "python-for-ai", "title": "Python for AI", "summary": "The data handling code that every training script needs: batching, splitting and scaling."},
   {"id": "math-foundations", "title": "Math foundations", "summary": "Matrix operations, gradients and optimization written with numpy."},
   {"id": "classical-ml", "title": "Classical ML", "summary": "The models that come before deep learning, written from the equations."},
   {"id": "deep-learning-core", "title": "Deep learning core", "summary": "Losses, backpropagation, normalization and optimizers."},
