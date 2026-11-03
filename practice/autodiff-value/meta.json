@@ -1,0 +1,21 @@
+{
+  "id": "autodiff-value",
+  "title": "Reverse-mode autodiff with a Value class",
+  "kind": "implement",
+  "summary": "Build a scalar Value class that records operations and computes gradients by reverse-mode automatic differentiation.",
+  "difficulty": "hard",
+  "tags": ["autodiff", "backpropagation", "chain-rule"],
+  "lesson": "phases/01-math-foundations/05-chain-rule-and-autodiff",
+  "cheatsheet": null,
+  "minutes": 45,
+  "entry": ["Value"],
+  "collections": ["math-foundations", "deep-learning-core"],
+  "time_limit_s": 10,
+  "mutants": {
+    "overwrite_grad": "Sets the gradient of an operand with = and not +=, so a value that is used twice keeps only the last gradient.",
+    "tanh_wrong_derivative": "Uses 1 - tanh(x) and not 1 - tanh(x) squared as the derivative of tanh.",
+    "pow_wrong_exponent": "Uses n * x ** n and not n * x ** (n - 1) as the derivative of a power.",
+    "forward_order": "Runs the local backward steps in the order of the forward pass and not in reverse order.",
+    "root_grad_missing": "Does not set the gradient of the output to 1 before the backward pass, so every gradient is 0."
+  }
+}

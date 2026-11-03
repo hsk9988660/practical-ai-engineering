@@ -1,0 +1,20 @@
+{
+  "id": "transform-composition",
+  "title": "Compose 2D transformations",
+  "kind": "implement",
+  "summary": "Build rotation, scaling and shear matrices, compose them in the order that you apply them, and apply a matrix to a set of points.",
+  "difficulty": "easy",
+  "tags": ["linear-algebra", "transformations", "matrix-multiplication"],
+  "lesson": "phases/01-math-foundations/03-matrix-transformations",
+  "cheatsheet": null,
+  "minutes": 20,
+  "entry": ["rotation", "scaling", "shear", "compose", "apply"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "compose_reversed": "Multiplies the matrices in the wrong order, so the last transformation is applied first.",
+    "rotation_clockwise": "Uses the transposed rotation matrix, which turns the points clockwise.",
+    "apply_without_transpose": "Computes points times matrix, which applies the transposed matrix to each point.",
+    "shear_swapped": "Puts kx and ky in the wrong places of the shear matrix."
+  }
+}

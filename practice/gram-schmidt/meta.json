@@ -1,0 +1,21 @@
+{
+  "id": "gram-schmidt",
+  "title": "Gram-Schmidt orthonormalization",
+  "kind": "implement",
+  "summary": "Turn a list of vectors into an orthonormal basis of their span, and skip vectors that depend on the earlier ones.",
+  "difficulty": "medium",
+  "tags": ["linear-algebra", "orthogonality", "projection"],
+  "lesson": "phases/01-math-foundations/01-linear-algebra-intuition",
+  "cheatsheet": null,
+  "minutes": 25,
+  "entry": ["gram_schmidt"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "no_normalize": "Keeps the orthogonal vectors but does not divide them by their length.",
+    "keeps_dependent": "Does not skip a vector whose residual is zero, so a dependent vector gives NaN.",
+    "wrong_sign": "Adds the projection to the vector instead of subtracting it.",
+    "only_first_projection": "Removes the part along the first basis vector only, so later vectors are not orthogonal to each other.",
+    "in_place": "Subtracts the projections inside the input rows, so the caller's array changes."
+  }
+}

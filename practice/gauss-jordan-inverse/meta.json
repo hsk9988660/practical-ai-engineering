@@ -1,0 +1,20 @@
+{
+  "id": "gauss-jordan-inverse",
+  "title": "Matrix inverse by Gauss-Jordan elimination",
+  "kind": "implement",
+  "summary": "Invert a square matrix with row operations and partial pivoting, and raise an error when the matrix is singular.",
+  "difficulty": "medium",
+  "tags": ["linear-algebra", "matrix-inverse", "numerical-stability"],
+  "lesson": "phases/01-math-foundations/02-vectors-matrices-operations",
+  "cheatsheet": null,
+  "minutes": 30,
+  "entry": ["inverse"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "no_pivoting": "Always uses the diagonal entry as the pivot, so a zero or tiny pivot breaks the result.",
+    "no_singular_check": "Does not raise an error for a singular matrix and divides by zero.",
+    "first_nonzero_pivot": "Takes the first row with a non-zero entry as the pivot, and not the row with the largest entry.",
+    "eliminates_below_only": "Clears the entries below each pivot but not above it, so the left half does not become the identity."
+  }
+}

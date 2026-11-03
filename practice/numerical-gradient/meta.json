@@ -1,0 +1,21 @@
+{
+  "id": "numerical-gradient",
+  "title": "Numerical gradient and gradient check",
+  "kind": "implement",
+  "summary": "Estimate a gradient with central differences for an input of any shape, and compare it with an analytic gradient by relative error.",
+  "difficulty": "easy",
+  "tags": ["calculus", "gradients", "gradient-checking"],
+  "lesson": "phases/01-math-foundations/04-calculus-for-ml",
+  "cheatsheet": null,
+  "minutes": 20,
+  "entry": ["numerical_gradient", "relative_error"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "forward_difference": "Uses (f(x+h) - f(x)) / h, which has an error of order h and not h squared.",
+    "half_denominator": "Divides the central difference by h and not by 2h, so every gradient is twice too large.",
+    "changes_input": "Writes the steps into the caller's array and never restores it.",
+    "no_zero_guard": "Divides by the sum of the norms even when both gradients are zero, which gives NaN.",
+    "absolute_error": "Returns the norm of the difference without dividing, so the error depends on the size of the gradients."
+  }
+}
