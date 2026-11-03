@@ -1,0 +1,21 @@
+{
+  "id": "gaussian-mle",
+  "title": "Gaussian log-density and maximum likelihood",
+  "kind": "implement",
+  "summary": "Compute the Gaussian log-density without underflow, fit the mean and standard deviation by maximum likelihood, and score data with the log-likelihood.",
+  "difficulty": "easy",
+  "tags": ["probability", "gaussian", "maximum-likelihood"],
+  "lesson": "phases/01-math-foundations/06-probability-and-distributions",
+  "cheatsheet": null,
+  "minutes": 20,
+  "entry": ["gaussian_log_pdf", "fit_gaussian", "log_likelihood"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "log_of_pdf": "Computes the density first and then takes its log, so a point far in the tail gives minus infinity.",
+    "sample_std": "Fits the standard deviation with ddof=1, which is not the maximum likelihood estimate.",
+    "missing_half": "Uses log(2 pi sigma^2) without the factor 1/2 in the normalizing constant.",
+    "mean_not_sum": "Averages the log-densities and does not sum them in log_likelihood.",
+    "returns_variance": "Returns the variance, and not the standard deviation, from fit_gaussian."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "bayes-posterior",
+  "title": "Bayes posterior and sequential updates",
+  "kind": "implement",
+  "summary": "Turn a prior and a likelihood into a posterior over hypotheses, and update it one observation at a time without underflow.",
+  "difficulty": "medium",
+  "tags": ["bayes", "probability", "inference"],
+  "lesson": "phases/01-math-foundations/07-bayes-theorem",
+  "cheatsheet": null,
+  "minutes": 20,
+  "entry": ["posterior", "sequential_posterior"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "no_normalize": "Returns prior times likelihood and does not divide by the evidence, so the result does not sum to 1.",
+    "forgets_prior": "Normalizes the likelihood alone and ignores the prior.",
+    "product_first": "Multiplies all the likelihoods together before it normalizes, which underflows to zero for many observations.",
+    "in_place": "Multiplies the prior array in place, so the caller's prior changes.",
+    "no_zero_check": "Divides by an evidence of zero and returns NaN."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "pca-eigen",
+  "title": "PCA with an eigendecomposition",
+  "kind": "implement",
+  "summary": "Fit PCA by centering, building the covariance matrix and sorting its eigenvectors, then project and reconstruct the data.",
+  "difficulty": "medium",
+  "tags": ["pca", "dimensionality-reduction", "eigendecomposition"],
+  "lesson": "phases/01-math-foundations/10-dimensionality-reduction",
+  "cheatsheet": null,
+  "minutes": 30,
+  "entry": ["fit_pca", "transform", "inverse_transform"],
+  "collections": ["math-foundations", "classical-ml"],
+  "time_limit_s": 10,
+  "mutants": {
+    "no_centering": "Builds the covariance matrix from the raw data without subtracting the mean.",
+    "ascending_order": "Keeps the eigenvectors with the smallest eigenvalues first.",
+    "ratio_of_selected": "Divides each eigenvalue by the sum of the k kept eigenvalues and not by the sum of all.",
+    "no_sign_fix": "Does not flip the sign of the eigenvectors, so the sign depends on the library.",
+    "inverse_forgets_mean": "Reconstructs the data without adding the mean back."
+  }
+}

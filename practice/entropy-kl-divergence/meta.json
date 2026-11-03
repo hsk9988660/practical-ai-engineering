@@ -1,0 +1,21 @@
+{
+  "id": "entropy-kl-divergence",
+  "title": "Entropy, cross-entropy and KL divergence",
+  "kind": "implement",
+  "summary": "Compute entropy, cross-entropy and KL divergence of discrete distributions in any log base, with the right answers for zero probabilities.",
+  "difficulty": "easy",
+  "tags": ["information-theory", "entropy", "kl-divergence"],
+  "lesson": "phases/01-math-foundations/09-information-theory",
+  "cheatsheet": null,
+  "minutes": 20,
+  "entry": ["entropy", "cross_entropy", "kl_divergence"],
+  "collections": ["math-foundations"],
+  "time_limit_s": 10,
+  "mutants": {
+    "ignores_base": "Always uses the natural log and ignores the base argument.",
+    "nan_on_zero": "Computes 0 times log 0 directly, which gives NaN for a zero probability.",
+    "kl_reversed": "Computes the KL divergence from q to p and not from p to q.",
+    "kl_clips_inf": "Clips q away from zero, so the KL divergence stays finite when q is 0 where p is not.",
+    "cross_entropy_swapped": "Weights log p by q, which is the cross-entropy of q relative to p."
+  }
+}

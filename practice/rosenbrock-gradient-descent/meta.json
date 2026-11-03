@@ -1,0 +1,21 @@
+{
+  "id": "rosenbrock-gradient-descent",
+  "title": "Gradient descent on the Rosenbrock function",
+  "kind": "implement",
+  "summary": "Write the Rosenbrock function and its gradient, and run plain gradient descent that records the loss at every step.",
+  "difficulty": "easy",
+  "tags": ["optimization", "gradient-descent", "calculus"],
+  "lesson": "phases/01-math-foundations/08-optimization",
+  "cheatsheet": null,
+  "minutes": 20,
+  "entry": ["rosenbrock", "rosenbrock_grad", "gradient_descent"],
+  "collections": ["math-foundations", "optimizers"],
+  "time_limit_s": 10,
+  "mutants": {
+    "grad_missing_term": "Leaves out the term 400 x (y - x squared) in the derivative with respect to x.",
+    "ascent": "Adds the gradient step and does not subtract it, so the loss grows.",
+    "history_misses_start": "Does not record the loss of the start point, so the history has one entry too few.",
+    "in_place_start": "Updates the start array in place, so the caller's start point changes.",
+    "wrong_y_gradient": "Uses 100 and not 200 in the derivative with respect to y."
+  }
+}
