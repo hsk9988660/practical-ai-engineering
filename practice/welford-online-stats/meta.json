@@ -1,0 +1,31 @@
+{
+  "id": "welford-online-stats",
+  "title": "Streaming mean and variance (Welford)",
+  "kind": "implement",
+  "summary": "Update a running mean and variance one value at a time, merge the states of two data parts, and stay accurate for values with a huge offset.",
+  "difficulty": "medium",
+  "tags": [
+    "statistics",
+    "streaming",
+    "numerical-stability"
+  ],
+  "lesson": "phases/01-math-foundations/15-statistics-for-ml",
+  "cheatsheet": null,
+  "minutes": 25,
+  "entry": [
+    "welford_update",
+    "welford_merge",
+    "welford_finalize"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "update_stale_mean": "Multiplies delta by itself and not by the distance to the new mean.",
+    "merge_missing_weight": "Leaves out the division by n in the correction term of m2.",
+    "merge_mean_unweighted": "Averages the two means without weighting them by their counts.",
+    "merge_no_empty_guard": "Divides by zero when both states are empty.",
+    "finalize_always_sample": "Always divides by n - 1 and ignores ddof."
+  }
+}

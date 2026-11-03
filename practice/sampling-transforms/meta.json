@@ -1,0 +1,31 @@
+{
+  "id": "sampling-transforms",
+  "title": "Sampling by transforming uniform numbers",
+  "kind": "implement",
+  "summary": "Turn uniform random numbers into exponential, normal and categorical samples with the inverse CDF, the Box-Muller transform and a cumulative search.",
+  "difficulty": "medium",
+  "tags": [
+    "sampling",
+    "inverse-cdf",
+    "box-muller"
+  ],
+  "lesson": "phases/01-math-foundations/16-sampling-methods",
+  "cheatsheet": null,
+  "minutes": 25,
+  "entry": [
+    "exponential_from_uniform",
+    "box_muller",
+    "categorical_from_uniform"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "exponential_uses_u": "Uses -log(u) and not -log(1 - u), so u = 0 gives infinity.",
+    "exponential_missing_rate": "Does not divide by the rate.",
+    "box_muller_variance": "Uses -ln u1 and not -2 ln u1 in the radius, so the variance is 1/2.",
+    "categorical_left_boundary": "Puts a u that equals a cumulative value into the earlier category and can pick a category with probability 0.",
+    "categorical_no_cap": "Does not cap the index, so rounding can give an index outside the list."
+  }
+}

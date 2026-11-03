@@ -1,0 +1,30 @@
+{
+  "id": "truncated-svd",
+  "title": "Low-rank approximation with the SVD",
+  "kind": "implement",
+  "summary": "Keep the k largest singular values to get the best rank-k approximation, measure the energy that you keep, and find the smallest rank for an energy target.",
+  "difficulty": "medium",
+  "tags": [
+    "svd",
+    "low-rank",
+    "compression"
+  ],
+  "lesson": "phases/01-math-foundations/11-singular-value-decomposition",
+  "cheatsheet": null,
+  "minutes": 25,
+  "entry": [
+    "low_rank",
+    "energy_ratio",
+    "smallest_rank"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "smallest_values": "Keeps the singular values at the end of the list, which are the smallest, and not the largest.",
+    "energy_not_squared": "Adds up the singular values and not their squares.",
+    "rank_off_by_one": "Returns the index of the first value that reaches the target and not the index plus 1.",
+    "no_zero_guard": "Divides by a total energy of zero for the zero matrix."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "tensor-broadcasting-ops",
+  "title": "Broadcasting and batched tensor operations",
+  "kind": "implement",
+  "summary": "Write four batched tensor operations without Python loops: per-channel normalization, one-hot encoding, batched outer products and a masked mean.",
+  "difficulty": "medium",
+  "tags": [
+    "numpy",
+    "broadcasting",
+    "tensors"
+  ],
+  "lesson": "phases/01-math-foundations/12-tensor-operations",
+  "cheatsheet": null,
+  "minutes": 30,
+  "entry": [
+    "channel_normalize",
+    "one_hot",
+    "batched_outer",
+    "masked_mean"
+  ],
+  "collections": [
+    "math-foundations"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "wrong_axis_broadcast": "Broadcasts the channel statistics on the last axis and not on the channel axis.",
+    "no_range_check": "Does not check the labels, so a negative label wraps to the last column.",
+    "outer_transposed": "Swaps the axes of the outer product, so each example is transposed.",
+    "mean_over_all_steps": "Divides by the sequence length and not by the number of valid steps.",
+    "no_empty_guard": "Divides by zero for an example without a valid step and gives NaN."
+  }
+}

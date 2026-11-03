@@ -1,0 +1,33 @@
+{
+  "id": "stable-functions",
+  "title": "Numerically stable sigmoid, softplus and log-sum-exp",
+  "kind": "implement",
+  "summary": "Write sigmoid, softplus, logsumexp and log_softmax so that they give the right answer for inputs of any size, without overflow and without losing small values.",
+  "difficulty": "medium",
+  "tags": [
+    "numerical-stability",
+    "logsumexp",
+    "floating-point"
+  ],
+  "lesson": "phases/01-math-foundations/13-numerical-stability",
+  "cheatsheet": null,
+  "minutes": 30,
+  "entry": [
+    "sigmoid",
+    "softplus",
+    "logsumexp",
+    "log_softmax"
+  ],
+  "collections": [
+    "math-foundations",
+    "deep-learning-core"
+  ],
+  "time_limit_s": 10,
+  "mutants": {
+    "softplus_naive": "Computes log(1 + exp(x)) directly, which overflows for large x and rounds to 0 for very negative x.",
+    "logsumexp_no_shift": "Does not subtract the maximum, so exp overflows for large inputs.",
+    "log_of_softmax": "Computes the log of the softmax, which gives minus infinity when a probability underflows.",
+    "sigmoid_wrong_sign": "Uses exp(x) and not exp(-x) in the positive branch.",
+    "axis_ignored": "Always reduces over the last axis and ignores the axis argument."
+  }
+}
